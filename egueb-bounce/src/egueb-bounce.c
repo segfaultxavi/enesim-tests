@@ -44,7 +44,7 @@ Eina_Bool timer (void *data) {
 
 int main (int argc, char *argv[]) {
 	Efl_Egueb_Window *w;
-	Egueb_Dom_Node *doc, *svg, *cir, *ext = NULL;
+	Egueb_Dom_Node *doc, *svg, *cir, *ext = NULL, *svg2;
 	Egueb_Svg_Length len;
 	Egueb_Svg_Paint paint;
 	Enesim_Stream *stream;
@@ -58,6 +58,7 @@ int main (int argc, char *argv[]) {
 	doc = egueb_svg_document_new ();
 
 	svg = egueb_svg_element_svg_new ();
+	egueb_dom_document_node_adopt (doc, svg, NULL);
 	egueb_dom_node_child_append (doc, svg, NULL);
 
 	cir = egueb_svg_element_circle_new ();
@@ -65,13 +66,16 @@ int main (int argc, char *argv[]) {
 	egueb_svg_element_circle_r_set (cir, &len);
 	egueb_svg_color_components_from (&paint.color, 255, 0, 0);
 	egueb_svg_element_fill_set (cir, &paint);
+	egueb_dom_document_node_adopt (doc, cir, NULL);
 	egueb_dom_node_child_append (svg, cir, NULL);
 
-	stream = enesim_stream_buffer_new ((void *)strdup (android_svg), strlen (android_svg));
+	stream = enesim_stream_buffer_static_new ((void *)android_svg, strlen (android_svg));
 	if (!stream)
 		return -1;
-	egueb_dom_parser_parse (stream, &ext);
-	egueb_dom_node_child_append (doc, egueb_dom_node_child_first_get (ext), NULL);
+	if (!egueb_dom_parser_parse (stream, &ext))
+		return -1;
+	svg2 = egueb_dom_document_node_adopt (doc, egueb_dom_node_child_first_get (ext), NULL);
+	egueb_dom_node_child_append (svg, svg2, NULL);
 
 	w = efl_egueb_window_auto_new (doc, 0, 0, WINDOW_SIZE, WINDOW_SIZE);
 	if (!w)
