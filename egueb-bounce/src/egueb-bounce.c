@@ -5,19 +5,6 @@
 #define WINDOW_SIZE 512
 #define RADIUS 30
 
-const char *android_svg = " \
-	<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 96 105\"> \
-	  <g fill=\"#97C024\" stroke=\"#97C024\" stroke-linejoin=\"round\" stroke-linecap=\"round\"> \
-		<path d=\"M14,40v24M81,40v24M38,68v24M57,68v24M28,42v31h39v-31z\" stroke-width=\"12\"/> \
-		<path d=\"M32,5l5,10M64,5l-6,10 \" stroke-width=\"2\"/> \
-	  </g> \
-	  <path d=\"M22,35h51v10h-51zM22,33c0-31,51-31,51,0\" fill=\"#97C024\"/> \
-	  <g fill=\"#FFF\"> \
-		<circle cx=\"36\" cy=\"22\" r=\"2\"/> \
-		<circle cx=\"59\" cy=\"22\" r=\"2\"/> \
-	  </g> \
-	</svg>";
-
 typedef struct _State {
 	int posx, posy, dirx, diry;
 	Egueb_Dom_Node *cir;
@@ -68,14 +55,6 @@ int main (int argc, char *argv[]) {
 	egueb_svg_element_fill_set (cir, &paint);
 	egueb_dom_document_node_adopt (doc, cir, NULL);
 	egueb_dom_node_child_append (svg, cir, NULL);
-
-	stream = enesim_stream_buffer_static_new ((void *)android_svg, strlen (android_svg));
-	if (!stream)
-		return -1;
-	if (!egueb_dom_parser_parse (stream, &ext))
-		return -1;
-	svg2 = egueb_dom_document_node_adopt (doc, egueb_dom_node_child_first_get (ext), NULL);
-	egueb_dom_node_child_append (svg, svg2, NULL);
 
 	w = efl_egueb_window_auto_new (doc, 0, 0, WINDOW_SIZE, WINDOW_SIZE);
 	if (!w)
