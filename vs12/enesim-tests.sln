@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "egueb-bounce", "..\egueb-bo
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "egueb-embedded", "..\egueb-embedded\vs12\egueb-embedded.vcxproj", "{66C72798-A11A-4EBC-9876-C477DCD3285F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "egueb-multibounce", "..\egueb-multibounce\vs12\egueb-multibounce.vcxproj", "{81FE1D2F-E648-4DA0-868C-3C85CC880023}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -31,6 +33,12 @@ Global
 		{66C72798-A11A-4EBC-9876-C477DCD3285F}.Release|Win32.Build.0 = Release|Win32
 		{66C72798-A11A-4EBC-9876-C477DCD3285F}.Release|x64.ActiveCfg = Release|x64
 		{66C72798-A11A-4EBC-9876-C477DCD3285F}.Release|x64.Build.0 = Release|x64
+		{81FE1D2F-E648-4DA0-868C-3C85CC880023}.Debug|Win32.ActiveCfg = Debug|Win32
+		{81FE1D2F-E648-4DA0-868C-3C85CC880023}.Debug|Win32.Build.0 = Debug|Win32
+		{81FE1D2F-E648-4DA0-868C-3C85CC880023}.Debug|x64.ActiveCfg = Debug|Win32
+		{81FE1D2F-E648-4DA0-868C-3C85CC880023}.Release|Win32.ActiveCfg = Release|Win32
+		{81FE1D2F-E648-4DA0-868C-3C85CC880023}.Release|Win32.Build.0 = Release|Win32
+		{81FE1D2F-E648-4DA0-868C-3C85CC880023}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
