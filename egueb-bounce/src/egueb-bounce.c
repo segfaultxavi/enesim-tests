@@ -31,10 +31,9 @@ Eina_Bool timer (void *data) {
 
 int main (int argc, char *argv[]) {
 	Efl_Egueb_Window *w;
-	Egueb_Dom_Node *doc, *svg, *cir, *ext = NULL, *svg2;
+	Egueb_Dom_Node *doc, *svg, *cir, *ext = NULL;
 	Egueb_Svg_Length len;
 	Egueb_Svg_Paint paint;
-	Enesim_Stream *stream;
 	State state;
 
 	if (!efl_egueb_init ())
