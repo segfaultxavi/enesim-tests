@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <ENESIM_PREFIX>C:\MinGW\msys\1.0\opt\windows_32</ENESIM_PREFIX>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(ENESIM_PREFIX)\include\efl-1;$(ENESIM_PREFIX)\include\eina-1;$(ENESIM_PREFIX)\include\eina-1\eina;$(ENESIM_PREFIX)\include\evil-1;$(ENESIM_PREFIX)\include\enesim-0;$(ENESIM_PREFIX)\include\efl_egueb-0;$(ENESIM_PREFIX)\include\evas-1;$(ENESIM_PREFIX)\include\eo-1;$(ENESIM_PREFIX)\include\ecore-1;$(ENESIM_PREFIX)\include\ender-0;$(ENESIM_PREFIX)\include\egueb-0\dom;$(ENESIM_PREFIX)\include\egueb-0\svg;$(ENESIM_PREFIX)\include\egueb-0\css</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__EVIL_MACRO_POP_H__;EINA_LOCK_H_;inline=__inline;Eina_Lock=int;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(ENESIM_PREFIX)\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libeina.lib;libecore.dll.a;libenesim.lib;libegueb_svg.lib;libegueb_dom.lib;libefl_egueb.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="ENESIM_PREFIX">
+      <Value>$(ENESIM_PREFIX)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
