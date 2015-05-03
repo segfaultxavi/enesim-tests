@@ -34,6 +34,28 @@ Eina_Bool timer (void *data) {
 	return ECORE_CALLBACK_RENEW;
 }
 
+static void on_enter (Egueb_Dom_Event *ev, void *data) {
+	State *state = (State *)data;
+	Egueb_Svg_Paint paint;
+	Egueb_Svg_Length len;
+
+	paint.type = EGUEB_SVG_PAINT_TYPE_COLOR;
+	len.unit = EGUEB_SVG_LENGTH_UNIT_PX;
+	len.value = 3;
+	egueb_svg_color_components_from(&paint.color, 255, 0, 0);
+	egueb_svg_element_stroke_set(state->cir, &paint);
+	egueb_svg_element_stroke_width_set(state->cir, &len);
+}
+
+static void on_exit (Egueb_Dom_Event *ev, void *data) {
+	State *state = (State *)data;
+	Egueb_Svg_Length len;
+
+	len.unit = EGUEB_SVG_LENGTH_UNIT_PX;
+	len.value = 0;
+	egueb_svg_element_stroke_width_set(state->cir, &len);
+}
+
 int main (int argc, char *argv[]) {
 	Efl_Egueb_Window *w;
 	Egueb_Dom_Node *doc, *svg;
@@ -62,15 +84,17 @@ int main (int argc, char *argv[]) {
 		state->radius = 10 + RAND (30);
 		state->posx = state->radius + RAND (WINDOW_SIZE - 2 * state->radius);
 		state->posy = state->radius + RAND (WINDOW_SIZE - 2 * state->radius);
-		state->dirx = RAND (20) - 10;
-		state->diry = RAND (20) - 10;
+		state->dirx = RAND (7) - 3;
+		state->diry = RAND (7) - 3;
 
 		cir = egueb_svg_element_circle_new ();
 		egueb_svg_length_set (&len, state->radius, EGUEB_SVG_LENGTH_UNIT_PX);
 		egueb_svg_element_circle_r_set (cir, &len);
 		egueb_svg_color_components_from (&paint.color, RAND (200), RAND (200), RAND (200));
 		egueb_svg_element_fill_set (cir, &paint);
-		egueb_dom_document_node_adopt (doc, cir, NULL);
+		egueb_dom_node_event_listener_add(cir, EGUEB_DOM_EVENT_MOUSE_OVER, on_enter, EINA_FALSE, state);
+		egueb_dom_node_event_listener_add(cir, EGUEB_DOM_EVENT_MOUSE_OUT, on_exit, EINA_FALSE, state);
+		egueb_dom_document_node_adopt(doc, cir, NULL);
 		egueb_dom_node_child_append (svg, cir, NULL);
 
 		state->cir = cir;
