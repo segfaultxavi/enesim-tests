@@ -27,7 +27,7 @@ int main (int argc, char *argv[]) {
 
 	doc = egueb_svg_document_new ();
 
-	stream = enesim_stream_buffer_static_new ((void *)android_svg, strlen (android_svg));
+	stream = enesim_stream_buffer_new ((void *)android_svg, strlen (android_svg), NULL);
 	if (!stream)
 		return -1;
 	if (!egueb_dom_parser_parse (stream, &ext))
