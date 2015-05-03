@@ -12,7 +12,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(ENESIM_PREFIX)\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libeina.lib;libecore.dll.a;libenesim.lib;libegueb_svg.lib;libegueb_dom.lib;libefl_egueb.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libeina.lib;libecore.dll.a;libenesim.lib;libegueb_svg.lib;libegueb_dom.lib;libegueb_smil.lib;libefl_egueb.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
