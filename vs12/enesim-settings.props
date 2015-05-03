@@ -8,7 +8,7 @@
   <ItemDefinitionGroup>
     <ClCompile>
       <AdditionalIncludeDirectories>$(SolutionDir);$(ENESIM_PREFIX)\include\efl-1;$(ENESIM_PREFIX)\include\eina-1;$(ENESIM_PREFIX)\include\eina-1\eina;$(ENESIM_PREFIX)\include\evil-1;$(ENESIM_PREFIX)\include\enesim-0;$(ENESIM_PREFIX)\include\efl_egueb-0;$(ENESIM_PREFIX)\include\evas-1;$(ENESIM_PREFIX)\include\eo-1;$(ENESIM_PREFIX)\include\ecore-1;$(ENESIM_PREFIX)\include\ender-0;$(ENESIM_PREFIX)\include\egueb-0\dom;$(ENESIM_PREFIX)\include\egueb-0\svg;$(ENESIM_PREFIX)\include\egueb-0\css;$(ENESIM_PREFIX)\include\egueb-0\smil</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>__EVIL_MACRO_POP_H__;EINA_LOCK_H_;inline=__inline;Eina_Lock=int;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>__EVIL_MACRO_POP_H__;inline=__inline;HAVE_MODE_T;HAVE_PID_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(ENESIM_PREFIX)\lib</AdditionalLibraryDirectories>
