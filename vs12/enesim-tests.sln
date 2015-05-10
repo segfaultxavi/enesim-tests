@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2013 for Windows Desktop
+# Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "egueb-bounce", "..\egueb-bounce\vs12\egueb-bounce.vcxproj", "{E15F96D1-CA81-4ADB-A69A-667FA2209C15}"
@@ -8,6 +8,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "egueb-embedded", "..\egueb-embedded\vs12\egueb-embedded.vcxproj", "{66C72798-A11A-4EBC-9876-C477DCD3285F}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "egueb-multibounce", "..\egueb-multibounce\vs12\egueb-multibounce.vcxproj", "{81FE1D2F-E648-4DA0-868C-3C85CC880023}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "egueb-koch", "..\egueb-koch\vs12\egueb-koch.vcxproj", "{856B98A1-D8DC-486E-9781-B33F314CEF81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,12 @@ Global
 		{81FE1D2F-E648-4DA0-868C-3C85CC880023}.Release|Win32.ActiveCfg = Release|Win32
 		{81FE1D2F-E648-4DA0-868C-3C85CC880023}.Release|Win32.Build.0 = Release|Win32
 		{81FE1D2F-E648-4DA0-868C-3C85CC880023}.Release|x64.ActiveCfg = Release|Win32
+		{856B98A1-D8DC-486E-9781-B33F314CEF81}.Debug|Win32.ActiveCfg = Debug|Win32
+		{856B98A1-D8DC-486E-9781-B33F314CEF81}.Debug|Win32.Build.0 = Debug|Win32
+		{856B98A1-D8DC-486E-9781-B33F314CEF81}.Debug|x64.ActiveCfg = Debug|Win32
+		{856B98A1-D8DC-486E-9781-B33F314CEF81}.Release|Win32.ActiveCfg = Release|Win32
+		{856B98A1-D8DC-486E-9781-B33F314CEF81}.Release|Win32.Build.0 = Release|Win32
+		{856B98A1-D8DC-486E-9781-B33F314CEF81}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
